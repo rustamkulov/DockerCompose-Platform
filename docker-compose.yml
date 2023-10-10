@@ -13,4 +13,14 @@ services:
     ports:
       - 9090:80
       - 4343:443
+  database:
+    build:
+      context: .
+      dockerfile: ./apps/postgres/Dockerfile
+    container_name: dockerkompose-database-container
+    image: dockerkompose-database-image
+    restart: always
+    ports:
+      - 5437:5432
+
     
